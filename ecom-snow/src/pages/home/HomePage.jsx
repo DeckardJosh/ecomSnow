@@ -1,11 +1,13 @@
 import React from "react";
-import Test from "../../comps/test"
+// import {TestComp} from "../../comps/test/TestComp"
+import Navbar from "../../comps/Navbar/Navbar";
 
 export const HomePage = () => {
     return(
         <>
         <div>
-            <Test />
+            {/* <TestComp /> */}
+            <Navbar />
         </div>
         </>
     );
