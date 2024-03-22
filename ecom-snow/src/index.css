@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap');
+
+:root {
+  --primary-color-dark: #75aedc;
+  --primary-color-medium: #94c6e3;
+  --primary-color-light: #9ed8f0;
+  --primary-color-ice: #d4f1f9;
+
+  --font-header: "Delius Unicase", cursive;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
