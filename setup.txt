@@ -1,0 +1,12 @@
+steps to setting up env
+
+cd server
+    npm start
+
+cd client
+    npm start
+
+TODO's:
+
+[x] = ;laksdfja;ds
+[ ] = 
