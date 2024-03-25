@@ -6,7 +6,26 @@ cd server
 cd client
     npm start
 
+
+products: 
+snowboards = Forum/Burton
+skis = Armada/line
+apparel = ThrityTwo
+Gear = Smith/Union/Salomon/Burton/K2
+
 TODO's:
 
-[x] = ;laksdfja;ds
+[x] = mens products
+[x] = womens products
+[ ] = kids products
+[ ] = 
+[ ] = 
+[ ] = 
+[ ] = 
+[ ] = 
+[ ] = 
+[ ] = 
+[ ] = 
+[ ] = 
+[ ] = 
 [ ] = 
