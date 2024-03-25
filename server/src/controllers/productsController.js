@@ -13,30 +13,35 @@ module.exports = () => {
     }
 
     const populateProducts = (req, res) => {
-        const product = {
-            name: "K2 MINDBENDER 105 BOA®",
-            brand: "K2",
-            group: "gear",
-            price: 750,
-            age: "womens",
-            size: ["24.5", "25.5", "26.5"],
-            rating: 4,
-            description: "An all new flex for the 24' season, The Mindbender 105 W BOA® are the ultimate high-level freeride boots for any female skier. Strapped with all-new BOA® technology, these boots wrap better, with more micro adjustability — creating performance and responsiveness like never before. Outfitted with classic Mindbender construction, a Powerlite Shell, FasftFit Instep, and a Powerful Spyne, the 105 W BOA® delivers an uncompromising downhill experience.",
-        };
+        res.json({message: "Currently Disabled"});
 
-        console.log(product);
+        //DISABLED
+        //to avoid putting extra data in db
 
-        (async() => {
-            const newProduct = new productModel(product);
-            try{
-                await newProduct.save();
-            }catch(error){
-                console.log(error);
-            }
-        })();
+        // const product = {
+        //     name: "K2 LUVBUG 3 YOUTH",
+        //     brand: "K2",
+        //     group: "gear",
+        //     price: 80,
+        //     age: "kids",
+        //     size: ["23.5", "24.5", "25.5"],
+        //     rating: 4,
+        //     description: "Getting bigger and stronger, the kiddos need a boot that can keep up with their developing skills. Enter the Indy 3 and Luvbug 3: three-buckle boots that are comfortable and ready to rip, with added performance for long days of bashing bumps and exploring the mountain.",
+        // };
 
-        // res.json({message: "data populated"});
-        res.json(product);
+        // console.log(product);
+
+        // (async() => {
+        //     const newProduct = new productModel(product);
+        //     try{
+        //         await newProduct.save();
+        //     }catch(error){
+        //         console.log(error);
+        //     }
+        // })();
+
+
+        // res.json(product);
     };
 
     return {
