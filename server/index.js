@@ -6,6 +6,10 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+require('dotenv').config();
+const mongoPassword = process.env.MONGO_PASS;
+// console.log(process.env);
+
 const PORT = process.env.PORT || 3000;
 const app = express();
 
@@ -18,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 //Connection to Mongo DB
-mongoose.connect("mongodb+srv://deckardj:SecureMongoDB14@ecomsnow.h4ryr55.mongodb.net/products");
+mongoose.connect(`mongodb+srv://deckardj:${mongoPassword}@ecomsnow.h4ryr55.mongodb.net/products`);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Mongo Connection Error"));
 db.once("open", () => {
