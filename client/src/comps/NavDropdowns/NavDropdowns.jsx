@@ -7,7 +7,7 @@ export default function NavDropdowns({ dropTitle, dropSnowboard, dropSki, dropAp
     <>
       <li className="nav-item dropdown pe-3">
         <button
-          className="nav-link dropdown-toggle text-light"
+          className="nav-link dropdown-toggle text-light btn btn-dark"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
