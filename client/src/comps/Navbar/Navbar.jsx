@@ -34,18 +34,21 @@ export default function Navbar() {
                 dropSnowboard={"/snowboards"}
                 dropSki={"/skis"}
                 dropApparel={"/apparel"}
+                dropGear={"/gear"}
               />
               <NavDropdowns
                 dropTitle={"Womens"}
                 dropSnowboard={"/snowboards"}
                 dropSki={"/skis"}
                 dropApparel={"/apparel"}
+                dropGear={"/gear"}
               />
               <NavDropdowns
                 dropTitle={"Kids"}
                 dropSnowboard={"/snowboards"}
                 dropSki={"/skis"}
                 dropApparel={"/apparel"}
+                dropGear={"/gear"}
               />
             {/* DropLinks End */}
 

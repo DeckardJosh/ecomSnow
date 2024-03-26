@@ -18,6 +18,7 @@ export default function HomeAbout() {
             <div className="buttons_row">
               <button className="btn btn-dark btn-sm">Skis</button>
               <button className="btn btn-dark btn-sm">Snowboards</button>
+              <button className="btn btn-dark btn-sm">Apparel</button>
               <button className="btn btn-dark btn-sm">Gear</button>
             </div>
           </div>
@@ -47,6 +48,7 @@ export default function HomeAbout() {
             <div className="buttons_row">
               <button className="btn btn-dark btn-sm">Skis</button>
               <button className="btn btn-dark btn-sm">Snowboards</button>
+              <button className="btn btn-dark btn-sm">Apparel</button>
               <button className="btn btn-dark btn-sm">Gear</button>
             </div>
           </div>
@@ -62,6 +64,7 @@ export default function HomeAbout() {
             <div className="buttons_row">
               <button className="btn btn-dark btn-sm">Skis</button>
               <button className="btn btn-dark btn-sm">Snowboards</button>
+              <button className="btn btn-dark btn-sm">Apparel</button>
               <button className="btn btn-dark btn-sm">Gear</button>
             </div>
           </div>

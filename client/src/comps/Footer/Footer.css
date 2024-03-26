@@ -1,0 +1,14 @@
+.footer_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.footer_content{
+    width: 800px;
+
+    display: flex;
+    flex-direction: column;
+}

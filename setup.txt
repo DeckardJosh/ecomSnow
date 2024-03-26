@@ -17,8 +17,8 @@ TODO's:
 
 [x] = mens products
 [x] = womens products
-[ ] = kids products
-[ ] = 
+[x] = kids products
+[ ] = add logo image
 [ ] = 
 [ ] = 
 [ ] = 
