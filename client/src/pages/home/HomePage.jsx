@@ -1,9 +1,9 @@
 import React from "react";
-// import {TestComp} from "../../comps/test/TestComp"
 import Navbar from "../../comps/Navbar/Navbar";
 import HomeHero from "../../comps/HomeHero";
 import HomeAbout from "../../comps/HomeAbout";
-import { TestComp } from "../../comps/test/TestComp";
+import HomeCompany from "../../comps/HomeCompany";
+// import { TestComp } from "../../comps/test/TestComp";
 
 export const HomePage = () => {
     return(
@@ -13,7 +13,8 @@ export const HomePage = () => {
             <Navbar />
             <HomeHero />
             <HomeAbout />
-            <TestComp />
+            {/* <TestComp /> */}
+            <HomeCompany />
         </div>
         </>
     );

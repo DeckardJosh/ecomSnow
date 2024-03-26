@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function NavDropdowns({ dropTitle, dropSnowboard, dropSki, dropApparel }) {
+export default function NavDropdowns({ dropTitle, dropSnowboard, dropSki, dropApparel, dropGear }) {
   return (
     <>
       <li className="nav-item dropdown pe-3">
@@ -33,6 +33,14 @@ export default function NavDropdowns({ dropTitle, dropSnowboard, dropSki, dropAp
                 Apparel
             </Link>
           </li>
+          <li>
+            <hr className="dropdown-divider" />
+          </li>
+          <li>
+            <Link className="dropdown-item" to={dropGear}>
+                Gear
+            </Link>
+          </li>
         </ul>
       </li>
     </>
@@ -43,5 +51,6 @@ NavDropdowns.propTypes = {
     dropTitle: PropTypes.string,
     dropSnowboard: PropTypes.string,
     dropSki: PropTypes.string,
-    dropApparel: PropTypes.string
+    dropApparel: PropTypes.string,
+    dropGear: PropTypes.string
 }
