@@ -19,7 +19,7 @@ TODO's:
 [x] = womens products
 [x] = kids products
 [ ] = add logo image
-[ ] = 
+[ ] = update nav links to all go to /products passing gender value along side (mens, womens, kids)
 [ ] = 
 [ ] = 
 [ ] = 
