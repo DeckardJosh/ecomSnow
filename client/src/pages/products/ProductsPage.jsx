@@ -1,10 +1,12 @@
 import React from "react";
-import TestComp from "../../comps/test";
+import ProductsList from "../../comps/ProductsList/ProductsList";
+// import TestComp from "../../comps/test";
 
 export const ProductsPage = () => {
     return (
         <>
-            <TestComp />
+            {/* <TestComp /> */}
+            <ProductsList />
         </>
     )
 }

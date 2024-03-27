@@ -1,0 +1,23 @@
+.custom_container{
+    display: flex;
+    justify-content: center;
+}
+
+.filters_wrapper{
+    width: 15%;
+    background-color: var(--primary-color-ice);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.products_list_wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: #efefef;
+
+    width: 70%;
+}
