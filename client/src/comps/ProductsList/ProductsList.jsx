@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from "prop-types";
 import Product from '../Product';
+import Filters from "../Filters"
 import "./ProductsList.css";
 
 export default function ProductsList() {
@@ -25,10 +26,9 @@ export default function ProductsList() {
 
   return (
     <>
-        <span>products list</span>
         <div className="custom_container">
             <div className="filters_wrapper">
-                test
+                <Filters />
             </div>
             <div className='products_list_wrapper'>
                 {loading ? (
