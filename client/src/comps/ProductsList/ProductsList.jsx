@@ -148,7 +148,7 @@ export default function ProductsList() {
             priceRange.min === "" &&
             priceRange.max === "" &&
             sortingMethod === "0" ? (
-            // If no brands are selected
+            // If no filters are selected
             products.map((product) => (
               <Product key={product._id} product={product} />
             ))
