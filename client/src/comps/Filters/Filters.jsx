@@ -2,10 +2,14 @@ import React, {useState, useEffect} from 'react';
 import "./Filters.css";
 
 export default function Filters({
+    sortingMethod,
+    onSortingMethodChange,
     onAgeSelect, //Used for passing selected age back and forth chilc/parent
+    onPriceRangeSelect, //Used for passing selected price ranges back and forth child/parent
     onBrandSelect, //Used for passing selected brand back and forth child/parent
 }) {
-
+    //Price Range
+    const [priceRange, setPriceRange] = useState({ min: '', max: '' })
     // Brand Names
     const [items, setItems] = useState([
         { id: 1, label: 'Forum' },
@@ -26,11 +30,25 @@ export default function Filters({
         setItems(sortedItems);
     }, []);
       
+    //Sorting Method
+    const handleSortingMethodChange = (event) => {
+        onSortingMethodChange(event.target.value);
+    };
+
 
     //Age Checkbox
     const handleAgeCheckbox = (event) => {
         const age = event.target.value;
         onAgeSelect(age);
+    }
+
+    //Price Range
+    const handlePriceRangeChange = (event) => {
+        const { name, value } = event.target;
+        setPriceRange({ ...priceRange, [name]: value });
+    }
+    const handleApplyPriceRange = () => {
+        onPriceRangeSelect(priceRange);
     }
 
     // Brand checkbox 
@@ -48,7 +66,7 @@ export default function Filters({
         {/* Sorting */}
             <div className="filter_sub_container">
                 <h3 className='filter_sub_header'>Sort By</h3>
-                <select className="form-select form-select-sm filter_sort" aria-label="Small select example">
+                <select className="form-select form-select-sm filter_sort" aria-label="Small select example" value={sortingMethod} onChange={handleSortingMethodChange}>
                     <option defaultValue={"0"}>Default</option>
                     <option value="1">Price: Low to High</option>
                     <option value="2">Price: High to Low</option>
@@ -56,7 +74,7 @@ export default function Filters({
             </div>
             <hr />
 
-        {/* Gender */}
+        {/* Gender COMPLETED*/}
             <div className="filter_sub_container">
                 <h3 className='filter_sub_header'>Age</h3>
                 <div className="form-check">
@@ -80,14 +98,15 @@ export default function Filters({
             </div>
             <hr />
 
-        {/* Price Range */}
+        {/* Price Range COMPLETED*/}
             <div className="filter_sub_container">
                 <h3 className='filter_sub_header'>Price</h3>
                 <div className="filter_range_container">
-                    <input type="number" inputMode='numeric' />
+                    <input type="number" inputMode='numeric' placeholder='Min-Price' name='min' value={priceRange.min} onChange={handlePriceRangeChange}/>
                     <span>-</span>
-                    <input type="number" inputMode='numeric' />
+                    <input type="number" inputMode='numeric' placeholder='Max-Price' name='max' value={priceRange.max} onChange={handlePriceRangeChange}/>
                 </div>
+                <button type='button' className='btn btn-sm btn-primary' onClick={handleApplyPriceRange}>Apply</button>
             </div>
             <hr />
 

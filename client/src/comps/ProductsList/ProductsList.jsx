@@ -8,18 +8,17 @@ export default function ProductsList() {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const [sortingMethod, setSortingMethod] = useState("0");
     const [selectedAge, setSelectedAge] = useState([]);
+    const [priceRange, setPriceRange] = useState({ min: '', max: '' });
     const [selectedBrands, setSelectedBrands] = useState([]); //Brand Checkboxes
+    const [sortedProductsLength, setSortedProductsLength] = useState(0);
 
     //ONLY API CALL -- all products
     useEffect(() => {
         fetch('/api')
             .then(response => response.json())
             .then(data => {
-                console.log("api fetch called")
-                // console.log(data);
-                // console.log(data.length)
                 setProducts(data);
                 setLoading(false);
             })
@@ -32,15 +31,32 @@ export default function ProductsList() {
     //Filtered Products for display
     useEffect(() => {
         // Filter products based on selected brands
-        console.log("filtered")
-        const filtered = products.filter(product => 
+        //Sort Method
+        let sortedProducts = [...products]
+
+        if (sortingMethod === "1") {
+            sortedProducts.sort((a, b) => a.price - b.price); //Low to High
+        } else if (sortingMethod === "2") {
+            sortedProducts.sort((a, b) => b.price - a.price); //High to Low
+        }
+
+        sortedProducts = sortedProducts.filter(product => 
             (selectedBrands.length === 0 || selectedBrands.includes(product.brand)) &&
-            (selectedAge.length === 0 || selectedAge.includes(product.age)));
-        setFilteredProducts(filtered);
-    }, [selectedAge, selectedBrands, products]);
+            (selectedAge.length === 0 || selectedAge.includes(product.age)) &&
+            (priceRange.min === '' || parseInt(product.price) >= parseInt(priceRange.min)) &&
+            (priceRange.max === '' || parseInt(product.price) <= parseInt(priceRange.max))
+            );
+        setFilteredProducts(sortedProducts);
+        //updating count for sorted products
+        setSortedProductsLength(sortedProducts.length);
+    }, [sortingMethod, selectedAge, priceRange, selectedBrands, products]);
     
 
-    
+    //Sorting Method
+    const handleSortingMethodChange = (method) => {
+        setSortingMethod(method);
+    };
+
     //Age selections
     const handleAgeSelection = (age) => {
         // Check if the brand is already selected for removal from list
@@ -51,6 +67,11 @@ export default function ProductsList() {
             // If not selected, add it to the list of selected brands
             setSelectedAge([...selectedAge, age]);
         }
+    };
+
+    //Price Range Selection
+    const handlePriceRangeSelect = (range) => {
+        setPriceRange(range);
     };
 
     //Brand selections
@@ -68,14 +89,21 @@ export default function ProductsList() {
   return (
     <>
     {/* for testing child parent passed values */}
-        <p>Selected Brands: {selectedBrands.join(', ')}</p>
+        {/* <p>Selected Brands: {selectedBrands.join(', ')}</p>
         <p>Selected Age: {selectedAge.join(', ')}</p>
+        <p>Selected Range: Min: {priceRange.min} Max: {priceRange.max}</p> */}
+        <p>Total Results: {sortedProductsLength}</p>
     {/* end testing */}
     
         <div className="custom_container">
             <div className="filters_wrapper">
                 <Filters
+                    //value and method for sorting
+                    sortingMethod={sortingMethod} 
+                    onSortingMethodChange={handleSortingMethodChange}
+                    //values to be exchanged between filters and parent
                     onAgeSelect={handleAgeSelection}
+                    onPriceRangeSelect={handlePriceRangeSelect}
                     onBrandSelect={handleBrandSelection}
                 />
             </div>
@@ -83,7 +111,7 @@ export default function ProductsList() {
                 {loading ? (
                     <p>Loading...</p>
                 ) : (
-                    (selectedBrands.length === 0 && selectedAge.length === 0) ? (
+                    (selectedBrands.length === 0 && selectedAge.length === 0 && (priceRange.min === '' && priceRange.max === '' && sortingMethod === "0")) ? (
                         // If no brands are selected
                         products.map((product) => (
                             <Product key={product._id} product={product} />
