@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import "./Filters.css";
 
-export default function Filters() {
+export default function Filters({
+    onAgeSelect, //Used for passing selected age back and forth chilc/parent
+    onBrandSelect, //Used for passing selected brand back and forth child/parent
+}) {
 
     // Brand Names
     const [items, setItems] = useState([
@@ -24,6 +27,17 @@ export default function Filters() {
     }, []);
       
 
+    //Age Checkbox
+    const handleAgeCheckbox = (event) => {
+        const age = event.target.value;
+        onAgeSelect(age);
+    }
+
+    // Brand checkbox 
+    const handleBrandCheckbox = (event) => {
+        const brand = event.target.value;
+        onBrandSelect(brand);
+    }
     
   return (
     <>
@@ -46,19 +60,19 @@ export default function Filters() {
             <div className="filter_sub_container">
                 <h3 className='filter_sub_header'>Age</h3>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                    <input className="form-check-input" type="checkbox" value="mens" id="flexCheckDefault" onChange={handleAgeCheckbox}/>
                     <label className="form-check-label" htmlFor="flexCheckDefault">
                         Mens
                     </label>
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                    <input className="form-check-input" type="checkbox" value="womens" id="flexCheckChecked" onChange={handleAgeCheckbox}/>
                     <label className="form-check-label" htmlFor="flexCheckChecked">
                         Womens
                     </label>
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                    <input className="form-check-input" type="checkbox" value="kids" id="flexCheckChecked" onChange={handleAgeCheckbox}/>
                     <label className="form-check-label" htmlFor="flexCheckChecked">
                         Kids
                     </label>
@@ -77,12 +91,12 @@ export default function Filters() {
             </div>
             <hr />
 
-        {/* Brand */}
+        {/* Brand  COMPLETED */}
             <div className="filter_sub_container">
                 <h3 className='filter_sub_header'>Brand</h3>
                 {items.map(item => (
                     <div className="form-check" key={item.id}>
-                    <input className="form-check-input" type="checkbox" value="" id={`flexCheck${item.id}`} />
+                    <input className="form-check-input" type="checkbox" value={item.label} id={`flexCheck${item.id}`} onChange={handleBrandCheckbox}/>
                     <label className="form-check-label" htmlFor={`flexCheck${item.id}`}>
                         {item.label}
                     </label>
