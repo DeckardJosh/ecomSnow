@@ -9,6 +9,18 @@
     text-transform: uppercase;
 }
 
+.results_clear_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtered_results_count{
+    font-family: var(--font-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .filter_sub_header{
     font-family: var(--font-body);
     font-size: 1rem;
@@ -44,4 +56,8 @@ input::-webkit-inner-spin-button {
     outline: none !important;
     border:1px solid var(--primary-color-light);
     box-shadow: 0 0 10px 5px var(--primary-color-light);
+}
+
+.button_apply{
+    margin: 5px;
 }
