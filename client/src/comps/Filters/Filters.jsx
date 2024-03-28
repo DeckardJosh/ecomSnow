@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import "./Filters.css";
 
 export default function Filters({
+    sortedProductsLength,
     sortingMethod,
     onSortingMethodChange,
     onAgeSelect, //Used for passing selected age back and forth chilc/parent
     onPriceRangeSelect, //Used for passing selected price ranges back and forth child/parent
     onBrandSelect, //Used for passing selected brand back and forth child/parent
+    onClearFilters
 }) {
     //Price Range
     const [priceRange, setPriceRange] = useState({ min: '', max: '' })
@@ -35,7 +37,6 @@ export default function Filters({
         onSortingMethodChange(event.target.value);
     };
 
-
     //Age Checkbox
     const handleAgeCheckbox = (event) => {
         const age = event.target.value;
@@ -56,11 +57,20 @@ export default function Filters({
         const brand = event.target.value;
         onBrandSelect(brand);
     }
+
+    //Clear Filters
+    const handleClearFilters = () => {
+        onClearFilters();
+    };
     
   return (
     <>
         <div className='filters_selections_wrapper'>
             <h2 className='filter_header'>Filters</h2>
+            <div className="results_clear_container">
+                <span className='filtered_results_count'>Results: {sortedProductsLength}</span>
+                <button type='button' className='btn btn-sm btn-danger button_apply' onClick={handleClearFilters}>Clear</button>
+            </div>
             <hr />
 
         {/* Sorting */}
@@ -106,7 +116,7 @@ export default function Filters({
                     <span>-</span>
                     <input type="number" inputMode='numeric' placeholder='Max-Price' name='max' value={priceRange.max} onChange={handlePriceRangeChange}/>
                 </div>
-                <button type='button' className='btn btn-sm btn-primary' onClick={handleApplyPriceRange}>Apply</button>
+                <button type='button' className='btn btn-sm btn-primary button_apply' onClick={handleApplyPriceRange}>Apply</button>
             </div>
             <hr />
 
