@@ -19,16 +19,6 @@ export default function Product({
     }
 }) {
     
-    // const [pic, setPic] = useState("");
-    
-    // useEffect(() => {
-    //     setPic(_id);
-    // }, []);
-
-    // useEffect(() => {
-    //     console.log(`../../images/${_id}.jpg`)
-    //     setPic(_id);
-    // }, [_id]);
 
   return (
     <>
