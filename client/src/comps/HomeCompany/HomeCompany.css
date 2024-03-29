@@ -68,5 +68,5 @@
 }
 
 .wave .shape-fill {
-    fill: #D4F1F9;
+    fill: var(--primary-color-medium);
 }

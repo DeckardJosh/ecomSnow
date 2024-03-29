@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function NavDropdowns({ dropTitle, dropSnowboard, dropSki, dropApparel, dropGear }) {
+export default function NavDropdowns({ 
+  dropTitle,
+  dropSnowboard,
+  dropSki,
+  dropApparel,
+  dropGear
+}) {
   return (
     <>
       <li className="nav-item dropdown pe-3">

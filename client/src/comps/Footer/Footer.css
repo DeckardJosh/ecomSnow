@@ -4,11 +4,13 @@
     align-items: center;
 
     padding: 20px;
+
+    background-color: var(--primary-color-medium);
 }
 
 .footer_content{
     width: 800px;
-
+    color: white;
     display: flex;
     flex-direction: column;
 }
