@@ -35,7 +35,7 @@ export default function ProductDetail() {
         console.error(`Product with ID ${id} not found`);
       }
     }
-  }, [loading, products, id]); // This effect runs when products, loading state, or productId changes
+  }, [loading, products, id]);
 
   if (loading) {
     return (

@@ -31,24 +31,24 @@ export default function Navbar() {
             <ul className="navbar-nav">
               <NavDropdowns
                 dropTitle={"Mens"}
-                dropSnowboard={"/snowboards"}
-                dropSki={"/skis"}
-                dropApparel={"/apparel"}
-                dropGear={"/gear"}
+                dropSnowboard={"/products"}
+                dropSki={"/products"}
+                dropApparel={"/products"}
+                dropGear={"/products"}
               />
               <NavDropdowns
                 dropTitle={"Womens"}
-                dropSnowboard={"/snowboards"}
-                dropSki={"/skis"}
-                dropApparel={"/apparel"}
-                dropGear={"/gear"}
+                dropSnowboard={"/products"}
+                dropSki={"/products"}
+                dropApparel={"/products"}
+                dropGear={"/products"}
               />
               <NavDropdowns
                 dropTitle={"Kids"}
-                dropSnowboard={"/snowboards"}
-                dropSki={"/skis"}
-                dropApparel={"/apparel"}
-                dropGear={"/gear"}
+                dropSnowboard={"/products"}
+                dropSki={"/products"}
+                dropApparel={"/products"}
+                dropGear={"/products"}
               />
             {/* DropLinks End */}
 

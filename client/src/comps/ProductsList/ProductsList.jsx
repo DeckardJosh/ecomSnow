@@ -154,10 +154,23 @@ export default function ProductsList() {
             ))
           ) : (
             // Otherwise filtered products
-            filteredProducts.map((product) => (
-              <Product key={product._id} product={product} />
-            ))
+            filteredProducts.length === 0 ? (
+              <p>Sorry, no products</p>
+            ) : (
+              filteredProducts.map((product) => (
+                <Product key={product._id} product={product} />
+              ))
+            )
           )}
+
+
+          {/* 
+                      // Otherwise filtered products
+            // filteredProducts.map((product) => (
+            //   <Product key={product._id} product={product} />
+            // ))
+            
+            */}
         </div>
       </div>
       {/* <Product /> */}
