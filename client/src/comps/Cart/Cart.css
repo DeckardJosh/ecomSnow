@@ -1,0 +1,10 @@
+.cart_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 100dvh;
+    width: 100%;
+    padding: 60px;
+}

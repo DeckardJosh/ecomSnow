@@ -3,11 +3,18 @@ import { useParams } from "react-router-dom";
 import "./ProductDetail.css";
 import pic from "../../images/mens-snow-model.jpg";
 
+import {useDispatch} from "react-redux";
+import {addNewCartItem} from "../../redux/cartSlice"
+
 //Loading animation ring
 import { ring } from "ldrs";
 ring.register();
 
-export default function ProductDetail() {
+export default function ProductDetail({newObj}) {
+  //Redux
+  const dispatch = useDispatch();
+
+
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -67,6 +74,19 @@ export default function ProductDetail() {
     return stars;
     };
 
+    
+  //Redux
+  const addToReduxStore = () => {
+    let newObj = {
+      id: product._id,
+      name: product.name,
+      price: product.price,
+      size: product.size
+    }
+    // console.log(newObj)
+
+    dispatch(addNewCartItem(newObj))
+  }
 
   return (
     <>
@@ -122,7 +142,7 @@ export default function ProductDetail() {
                     </div> */}
           </div>
           <p className="product_description">{product.description}</p>
-          <button className="btn btn-dark btn-lg">Add to cart</button>
+          <button className="btn btn-dark btn-lg" onClick={() => addToReduxStore()}>Add to cart</button>
         </div>
       </div>
     </>
