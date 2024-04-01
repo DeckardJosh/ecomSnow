@@ -12,7 +12,7 @@
 .cart_price_button{
     display: flex;
     justify-content: space-between;
-    width: 600px;
+    width: 500px;
 }
 
 .cart_price_total{

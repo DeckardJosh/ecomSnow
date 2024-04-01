@@ -60,23 +60,6 @@
   font-family: var(--font-body);
 }
 
-.buttons_row {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.buttons_row button {
-  width: 100px;
-}
-
-.buttons_row button:hover {
-  background-color: var(--primary-color-ice);
-  border: transparent;
-  color: black;
-}
-
 .home_blob_one {
   background: url(../../images/blob_1_rework.svg);
 }
