@@ -39,7 +39,7 @@
 .hero_header_rotate span {
     position: relative;
     color: red;
-    animation: header_animation 10s ease infinite;
+    animation: header_animation 7s ease infinite;
 }
 
 @keyframes header_animation {

@@ -111,3 +111,9 @@
     width: 70%;
     margin: 40px 0px;
 }
+
+.cust_button.active{
+  /* used for buttons active class */
+  background-color: var(--primary-color-ice);
+  color: black;
+}

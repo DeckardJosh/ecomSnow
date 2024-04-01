@@ -19,6 +19,7 @@ export default function ProductDetail({newObj}) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
 
   useEffect(() => {
     fetch("/api")
@@ -77,11 +78,16 @@ export default function ProductDetail({newObj}) {
     
   //Redux
   const addToReduxStore = () => {
+    if (!selectedSize) {
+      // If no size is selected, do not add to cart
+      return;
+    }
+
     let newObj = {
       id: product._id,
       name: product.name,
       price: product.price,
-      size: product.size
+      size: selectedSize
     }
     // console.log(newObj)
 
@@ -126,7 +132,7 @@ export default function ProductDetail({newObj}) {
                         ))}
                     </div> */}
             {product.size.map((size, index) => (
-              <button className="btn btn-dark btn-lg cust_button" key={index}>
+              <button className={`btn btn-dark btn-lg cust_button ${selectedSize === size ? 'active' : ''}`} key={index} onClick={()=>{setSelectedSize(size)}}>
                 {size}
               </button>
             ))}

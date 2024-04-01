@@ -8,3 +8,10 @@
     width: 100%;
     padding: 60px;
 }
+
+.empty_cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

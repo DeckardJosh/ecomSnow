@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import addNewCartItem from "./cartSlice";
 
 const initialState = {
     cart: []
@@ -10,14 +9,16 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addNewCartItem(state, newObj) {
-            //this hurt my soul
-                //took 16 hours of research to figure out what was happening
-            state.cart.push(newObj.payload)
+            state.cart = [...state.cart, newObj.payload];
+        },
+        removeCartItem(state, obj){
+            state.cart = state.cart.filter(item => item.id !== obj.payload.id);
         }
     }
 });
 
 export const selectCart = (state) => state.cart.cart;
 export const {addNewCartItem} = cartSlice.actions;
+export const {removeCartItem} = cartSlice.actions;
 
 export default cartSlice.reducer;
