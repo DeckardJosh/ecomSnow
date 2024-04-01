@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import NavDropdowns from "../NavDropdowns";
 
+//Redux
+import { useSelector } from "react-redux";
+import { selectCart } from "../../redux/cartSlice";
+
 export default function Navbar() {
+  const allCartItems = useSelector(selectCart);
+
   return (
     <>
       <nav className="navbar navbar-expand-md bg-body-tertiary nav">
@@ -54,8 +60,8 @@ export default function Navbar() {
 
               {/* Cart Starts Here */}
               <li className="nav-item pe-3">
-                <Link className="nav-link text-light" to={"#"}>
-                    Cart
+                <Link className="nav-link text-light" to={"/cart"}>
+                    Cart - {allCartItems.length}
                 </Link>
               </li>
               {/* Cart Ends Here */}

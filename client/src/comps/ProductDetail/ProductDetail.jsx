@@ -3,15 +3,23 @@ import { useParams } from "react-router-dom";
 import "./ProductDetail.css";
 import pic from "../../images/mens-snow-model.jpg";
 
+import {useDispatch} from "react-redux";
+import {addNewCartItem} from "../../redux/cartSlice"
+
 //Loading animation ring
 import { ring } from "ldrs";
 ring.register();
 
-export default function ProductDetail() {
+export default function ProductDetail({newObj}) {
+  //Redux
+  const dispatch = useDispatch();
+
+
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
 
   useEffect(() => {
     fetch("/api")
@@ -67,6 +75,24 @@ export default function ProductDetail() {
     return stars;
     };
 
+    
+  //Redux
+  const addToReduxStore = () => {
+    if (!selectedSize) {
+      // If no size is selected, do not add to cart
+      return;
+    }
+
+    let newObj = {
+      id: product._id,
+      name: product.name,
+      price: product.price,
+      size: selectedSize
+    }
+    // console.log(newObj)
+
+    dispatch(addNewCartItem(newObj))
+  }
 
   return (
     <>
@@ -106,7 +132,7 @@ export default function ProductDetail() {
                         ))}
                     </div> */}
             {product.size.map((size, index) => (
-              <button className="btn btn-dark btn-lg cust_button" key={index}>
+              <button className={`btn btn-dark btn-lg cust_button ${selectedSize === size ? 'active' : ''}`} key={index} onClick={()=>{setSelectedSize(size)}}>
                 {size}
               </button>
             ))}
@@ -122,7 +148,7 @@ export default function ProductDetail() {
                     </div> */}
           </div>
           <p className="product_description">{product.description}</p>
-          <button className="btn btn-dark btn-lg">Add to cart</button>
+          <button className="btn btn-dark btn-lg" onClick={() => addToReduxStore()}>Add to cart</button>
         </div>
       </div>
     </>
