@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import "./Product.css";
 
 import pic from "../../images/mens-snow-model.jpg";
-// import image from "../../images/6600b74eea2de1bc6a324a87.jpg"
 
 export default function Product({
     product: {
@@ -21,16 +20,10 @@ export default function Product({
     <>
     {/* for testing */}
     {/* <div className="products_list_testing_wrapper"> */}
-    {/* {pic && <img src={require(`../../images/${pic}.jpg`).default} alt="not working" />} */}
         <div className='product_wrapper'>
             <Link to={`/products/${_id}`} className='product_link_wrapper'>
                 <div className="product_image">
                     <img src={pic} alt="not working" />
-                    {/* <img src={`../../images/${pic}.jpg`} alt="not working" /> */}
-                    {/* <img src={image} alt="not working" /> */}
-                    {/* <img src={require(`../../images/${pic}.jpg`).default} alt="not working" /> */}
-                    {/* <img src={pic ? require(`../../images/${pic}.jpg`).default : require('../../images/mens-snow-model.jpg').default} alt="not working" /> */}
-
                 </div>
                 <div className="product_subcontent_wrapper">
                     <div className="product_content_row">
@@ -43,7 +36,6 @@ export default function Product({
                 </div>
             </Link>
         </div>
-
     {/* </div> */}
     </>
   );

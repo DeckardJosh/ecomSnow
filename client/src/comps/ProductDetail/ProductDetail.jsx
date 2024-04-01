@@ -6,6 +6,9 @@ import pic from "../../images/mens-snow-model.jpg";
 import {useDispatch} from "react-redux";
 import {addNewCartItem} from "../../redux/cartSlice"
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //Loading animation ring
 import { ring } from "ldrs";
 ring.register();
@@ -91,6 +94,17 @@ export default function ProductDetail({newObj}) {
     }
     // console.log(newObj)
 
+    // Show a toast message
+    toast.success('Item added to cart!', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
     dispatch(addNewCartItem(newObj))
   }
 
@@ -122,33 +136,16 @@ export default function ProductDetail({newObj}) {
           </div>
           <h3 className="product_select_size_header">Select Size</h3>
           <div className="btn_sizes_container">
-            {/* needs active selector */}
-            {/* <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        {product.size.map((size, index) => (
-                            <div key={index}>
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"/>
-                                <label class="btn btn-outline-primary" for="btnradio1">{size}</label>
-                            </div>
-                        ))}
-                    </div> */}
             {product.size.map((size, index) => (
               <button className={`btn btn-dark btn-lg cust_button ${selectedSize === size ? 'active' : ''}`} key={index} onClick={()=>{setSelectedSize(size)}}>
                 {size}
               </button>
             ))}
-            {/* <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" />
-                        <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
-                        <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
-                        <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
-                    </div> */}
           </div>
           <p className="product_description">{product.description}</p>
+
           <button className="btn btn-dark btn-lg" onClick={() => addToReduxStore()}>Add to cart</button>
+          <ToastContainer />
         </div>
       </div>
     </>

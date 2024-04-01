@@ -12,7 +12,8 @@ export const cartSlice = createSlice({
             state.cart = [...state.cart, newObj.payload];
         },
         removeCartItem(state, obj){
-            state.cart = state.cart.filter(item => item.id !== obj.payload.id);
+            // state.cart = state.cart.filter(item => item.id !== obj.payload.id);
+            state.cart = state.cart.filter(item => !(item.id === obj.payload.id && item.size === obj.payload.size));
         }
     }
 });

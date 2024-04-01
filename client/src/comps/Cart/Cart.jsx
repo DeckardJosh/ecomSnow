@@ -10,6 +10,8 @@ export default function Cart({cart}) {
     const allCartItems = useSelector(selectCart);
     const itemsToRender = cart && cart.length > 0 ? cart : allCartItems;
 
+    const totalPrice = itemsToRender.reduce((total, item) => total + item.price, 0);
+
   return (
     <>
         <div className="cart_container">
@@ -19,7 +21,12 @@ export default function Cart({cart}) {
                 {itemsToRender.map((item, i) => (
                 <CartItem key={i} item={item} />
                 ))}
-                <button className='btn btn-dark btn-md'>Checkout</button>
+                <div className="cart_price_button">
+                    <button className='btn btn-dark btn-md'>Checkout</button>
+                    <h3 className='cart_price_total'>Total Price: ${totalPrice}</h3>
+                </div>
+
+
             </div>
         ) : (
             <div className="empty_cart">
@@ -35,16 +42,3 @@ export default function Cart({cart}) {
     </>
   )
 }
-
-/*
-        {cart ? (
-            cart.map((item, i) => {
-                return <CartItem key={i} item={item} />
-            })
-        ) : (
-            <div>
-                <p>Nothing in your cart!</p>
-                <p>Do some Shopping!</p>
-            </div>
-        )}
-*/

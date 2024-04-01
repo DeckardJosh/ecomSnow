@@ -1,62 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import "./NavDropdown.css";
 
 export default function NavDropdowns({ 
   dropTitle,
-  dropSnowboard,
-  dropSki,
-  dropApparel,
-  dropGear
+  dropPath
 }) {
   return (
     <>
-      <li className="nav-item dropdown pe-3">
-        <button
-          className="nav-link dropdown-toggle text-light btn btn-dark"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-            {dropTitle}
-        </button>
-        <ul className="dropdown-menu dropdown-menu-sm-end">
-          <li>
-            <Link className="dropdown-item" to={dropSnowboard}>
-                Snowboards
-            </Link>
-          </li>
-          <hr className="dropdown-divider" />
-          <li>
-            <Link className="dropdown-item" to={dropSki}>
-                Skis
-            </Link>
-          </li>
-          <li>
-            <hr className="dropdown-divider" />
-          </li>
-          <li>
-            <Link className="dropdown-item" to={dropApparel}>
-                Apparel
-            </Link>
-          </li>
-          <li>
-            <hr className="dropdown-divider" />
-          </li>
-          <li>
-            <Link className="dropdown-item" to={dropGear}>
-                Gear
-            </Link>
-          </li>
-        </ul>
-      </li>
+        <li class="nav-item">
+          <Link className="nav-link btn btn-dark custom_nav_link active me-2" to={dropPath}>{dropTitle}</Link>
+        </li>
     </>
   );
 }
 
 NavDropdowns.propTypes = {
     dropTitle: PropTypes.string,
-    dropSnowboard: PropTypes.string,
-    dropSki: PropTypes.string,
-    dropApparel: PropTypes.string,
-    dropGear: PropTypes.string
+    dropPath: PropTypes.string
 }
