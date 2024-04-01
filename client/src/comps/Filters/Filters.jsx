@@ -88,20 +88,20 @@ export default function Filters({
             <div className="filter_sub_container">
                 <h3 className='filter_sub_header'>Age</h3>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="mens" id="flexCheckDefault" onChange={handleAgeCheckbox}/>
-                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                    <input className="form-check-input" type="checkbox" value="mens" id="mensCheckbox" onChange={handleAgeCheckbox}/>
+                    <label className="form-check-label" htmlFor="mensCheckbox">
                         Mens
                     </label>
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="womens" id="flexCheckChecked" onChange={handleAgeCheckbox}/>
-                    <label className="form-check-label" htmlFor="flexCheckChecked">
+                    <input className="form-check-input" type="checkbox" value="womens" id="womensCheckbox" onChange={handleAgeCheckbox}/>
+                    <label className="form-check-label" htmlFor="womensCheckbox">
                         Womens
                     </label>
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="kids" id="flexCheckChecked" onChange={handleAgeCheckbox}/>
-                    <label className="form-check-label" htmlFor="flexCheckChecked">
+                    <input className="form-check-input" type="checkbox" value="kids" id="kidsCheckbox" onChange={handleAgeCheckbox}/>
+                    <label className="form-check-label" htmlFor="kidsCheckbox">
                         Kids
                     </label>
                 </div>

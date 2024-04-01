@@ -9,7 +9,7 @@ import { ring } from 'ldrs'
 ring.register()
 
 
-export default function ProductsList() {
+export default function ProductsList({categoryChecked}) {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -162,15 +162,6 @@ export default function ProductsList() {
               ))
             )
           )}
-
-
-          {/* 
-                      // Otherwise filtered products
-            // filteredProducts.map((product) => (
-            //   <Product key={product._id} product={product} />
-            // ))
-            
-            */}
         </div>
       </div>
       {/* <Product /> */}

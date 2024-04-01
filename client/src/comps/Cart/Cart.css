@@ -9,6 +9,16 @@
     padding: 60px;
 }
 
+.cart_price_button{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.cart_price_total{
+    font-family: var(--font-body);
+}
+
 .empty_cart{
     display: flex;
     flex-direction: column;

@@ -13,14 +13,8 @@ export default function HomeAbout() {
           <div className="home_about_column">
             <h2 className="home_about_column__header">Shop Mens</h2>
             <p className="home_about_column__subheader">
-              We offer Snowboards, Skis, and assorted Gear
+              We have plenty of Mens gear. Anything from Forum snowboards to ThirtyTwo Apparel. Take a look at our Products page and check out what we are reccomending! You won't be disappointed.
             </p>
-            <div className="buttons_row">
-              <button className="btn btn-dark btn-sm">Skis</button>
-              <button className="btn btn-dark btn-sm">Snowboards</button>
-              <button className="btn btn-dark btn-sm">Apparel</button>
-              <button className="btn btn-dark btn-sm">Gear</button>
-            </div>
           </div>
           <div className="home_blob_one home_about_column_blob">
             <img
@@ -43,14 +37,8 @@ export default function HomeAbout() {
           <div className="home_about_column">
             <h2 className="home_about_column__header">Shop Womens</h2>
             <p className="home_about_column__subheader">
-              We offer Snowboards, Skis, and assorted Gear
+              Ladies! You are going to love our picks here. We have gear from Burton, K2, and ThirtyTwo to make you feel right at home on the mountain. All sizes shown are for these products are in Womens.
             </p>
-            <div className="buttons_row">
-              <button className="btn btn-dark btn-sm">Skis</button>
-              <button className="btn btn-dark btn-sm">Snowboards</button>
-              <button className="btn btn-dark btn-sm">Apparel</button>
-              <button className="btn btn-dark btn-sm">Gear</button>
-            </div>
           </div>
         </div>
         {/* END WOMENS SECTION */}
@@ -59,14 +47,8 @@ export default function HomeAbout() {
           <div className="home_about_column">
             <h2 className="home_about_column__header">Shop Kids</h2>
             <p className="home_about_column__subheader">
-              We offer Snowboards, Skis, and assorted Gear
+              Thinking of picking up something for the kids? Check out our recommendations! There are few kids brands out there, but Burton, Oakley, and Salomon have some great choices.
             </p>
-            <div className="buttons_row">
-              <button className="btn btn-dark btn-sm">Skis</button>
-              <button className="btn btn-dark btn-sm">Snowboards</button>
-              <button className="btn btn-dark btn-sm">Apparel</button>
-              <button className="btn btn-dark btn-sm">Gear</button>
-            </div>
           </div>
           <div className="home_blob_three home_about_column_blob">
             <img

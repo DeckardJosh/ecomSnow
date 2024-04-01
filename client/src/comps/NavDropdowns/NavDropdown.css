@@ -1,0 +1,13 @@
+.custom_nav_link{
+    color: white;
+}
+
+.custom_nav_link.active:hover{
+    background-color: #efefef !important;
+    color: black !important;
+}
+
+.nav-link.active{
+    background-color: var(--primary-color-medium);
+    color: #efefef !important;
+}
