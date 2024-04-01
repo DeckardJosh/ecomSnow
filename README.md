@@ -1,4 +1,7 @@
 <h1>ecomSnow: Personal Project</h1>
+
+https://github.com/DeckardJosh/ecomSnow/assets/121363742/5414b4a7-7b67-4623-8c13-4b9a24d2c466
+
 <p>This is a project designed to showcase my skills as a developer. It is a mock ecommerce site for snowboarding and skiing. It uses real data pulled from sites such as Burton, Salomon, K2, ThirtyTwo, Forum and more. I plan on making this responsive, and hosting this site soon!</p>
 <p><strong>Things to note:</strong></p>
 <p>One of the biggest challenges was attempting actual project images. As it stands now, There is one photo being used for all of the products, and I need to do more research to updating the API rendring images based on their values.</p>
