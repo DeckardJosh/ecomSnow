@@ -34,6 +34,7 @@ export default function Navbar() {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav">
+              <NavDropdowns dropTitle={"Admin"} dropPath={"/auth"} />
               <NavDropdowns dropTitle={"Products"} dropPath={"/products"}/>
 
               <li className="nav-item pe-3">

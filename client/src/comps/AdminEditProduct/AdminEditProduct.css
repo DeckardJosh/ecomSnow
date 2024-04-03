@@ -1,0 +1,20 @@
+.admin_add_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-dark);
+
+    width: 100%;
+    height: 100dvh;
+}
+
+.admin_add_subcontainer{
+    background-color: var(--primary-color-light);
+    padding: 20px;
+    color: black;
+    border-radius: 20px;
+}
+
+.add_form_textarea{
+    height: 200px;
+}
