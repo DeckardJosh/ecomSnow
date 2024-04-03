@@ -1,12 +1,16 @@
 <h1>ecomSnow: Personal Project</h1>
 <h2>Forward Facing Application</h2>
+
 https://github.com/DeckardJosh/ecomSnow/assets/121363742/e931b836-57b8-4110-9cbc-a0b0650b2129
 
 <h2>Backend Application</h2>
+
 https://github.com/DeckardJosh/ecomSnow/assets/121363742/7eb482cb-f9f9-4031-a5f9-5cb5e2eaeb6c
 
 <h2>FrontEnd Admin</h2>
+
 https://github.com/DeckardJosh/ecomSnow/assets/121363742/a1d1e8be-933a-4a7f-a429-407854c0bfd6
+
 
 
 <p>This is a project designed to showcase my skills as a developer. It is a mock ecommerce site for snowboarding and skiing. It uses real data pulled from sites such as Burton, Salomon, K2, ThirtyTwo, Forum and more. I plan on making this responsive, and hosting this site soon!</p>
