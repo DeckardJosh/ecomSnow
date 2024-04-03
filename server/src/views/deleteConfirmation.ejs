@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Delete Confirmation</title>
+</head>
+<body>
+    <div class="delete_confirmation_container">
+        <p>Are you sure you want to delete the following product?</p>
+        <ul class="list-group boot_list_group mb-2">
+            <li class="list-group-item">ID: <%= product._id %></li>
+            <li class="list-group-item">Name: <%= product.name %></li>
+            <li class="list-group-item">Brand: <%= product.brand %></li>
+            <li class="list-group-item">Age: <%= product.age %></li>
+            <li class="list-group-item">Price: <%= product.price %></li>
+        </ul>
+        <div class="delete_button_group">
+            <form method="post" action="/admin/deleted">
+                <input type="hidden" name="id" value="<%=product._id%>" />
+                <button class="btn btn-danger">YES</button>
+                <a href="/admin/api/all" class="btn btn-dark">NO</a>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

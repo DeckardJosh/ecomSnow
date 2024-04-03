@@ -18,8 +18,15 @@ const router = require("./src/routes/productsRoutes")();
 app.use(morgan("tiny"));
 app.use(express.static(path.join(__dirname, "/public/")));
 
+//CSS
+app.use('/public', express.static('public'));
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+//EJS
+app.set("views", "./src/views");
+app.set("view engine", "ejs");
 
 //Connection to Mongo DB
 mongoose.connect(`mongodb+srv://deckardj:${mongoPassword}@ecomsnow.h4ryr55.mongodb.net/products`);
