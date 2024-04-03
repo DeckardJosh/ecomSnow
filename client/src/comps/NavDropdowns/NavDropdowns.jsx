@@ -9,7 +9,7 @@ export default function NavDropdowns({
 }) {
   return (
     <>
-        <li class="nav-item">
+        <li className="nav-item">
           <Link className="nav-link btn btn-dark custom_nav_link active me-2" to={dropPath}>{dropTitle}</Link>
         </li>
     </>

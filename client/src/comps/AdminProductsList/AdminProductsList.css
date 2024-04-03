@@ -1,0 +1,31 @@
+.admin_all_container{
+    width: 100%;
+    
+    background-color: var(--primary-color-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.admin_all_table{
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin_table_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: 2px solid var(--primary-color-medium);
+    background-color: var(--primary-color-medium);
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
